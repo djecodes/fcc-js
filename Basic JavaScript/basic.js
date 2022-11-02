@@ -67,3 +67,59 @@ const sum = 10 + 10;
 // JS uses the - symbol for subtraction
 // Change the code so that the difference is 12
 const difference = 45 - 33;
+
+// JS use the * symbol for multiplication
+// Change the code so that product will equal 80
+const product = 8 * 10;
+
+// JS uses the / symbol for division
+// Change the code so that the quotient is equal to 2
+const quotient = 66 / 33;
+
+// In JS, you can increment a variable with the ++ operator
+// Change the code to use ++ on myVar
+let myVar = 87;
+myVar++;
+
+// In JS, you can decrement a variable with the -- operator
+// Change the code to use -- on myVar
+let myVar = 11;
+myVar--;
+
+// Decimal numbers are sometimes referred to as floating point numbers or floats
+// Create a variable myDecimal and give it a value with a fractional part (e.g. 5.7)
+const myDecimal = 6.5;
+
+// In JS, you can also perform calculations with decimal numbers
+// Change the code so that product will equal 5.0
+const product = 5.0 * 1.0;
+
+// Now let's divide one decimal by another
+const quotient = 4.4 / 2.0;
+
+// The remainder operator % gives the remainder of the division of two numbers
+// Set remainder equal to the remainder of 11 divided by 3
+const remainder = 11 % 3;
+
+/* In programming, it is common to use assignments to modify the contents of a variable.
+** There are operators which do both mathematical operation and assignment in one step.
+** One such operator is +=
+*/
+// Convert the assignments for a, b, and c to use the += operator
+let a = 3;
+let b = 17;
+let c = 12;
+
+a += 12;
+b += 9;
+c += 7;
+
+// Like the += operator, -= subtracts a number from a variable
+// Convert the assignments for a, b, and c to use the -= operator
+let a = 11;
+let b = 15;
+let c = 3;
+
+a -= 6;
+b -= 15;
+c -= 1;
