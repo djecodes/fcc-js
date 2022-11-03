@@ -161,3 +161,4 @@ const myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
 ** such as a newline.
 */
 // Assign the following three lines of text into the single variable myStr using escape sequences
+const myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
