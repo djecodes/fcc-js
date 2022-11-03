@@ -123,3 +123,41 @@ let c = 3;
 a -= 6;
 b -= 15;
 c -= 1;
+
+// The *= operator multiplies a variable by a number
+// Convert the assignments for a, b, and c to use the *= operator
+let a = 5;
+let b = 12;
+let c = 4.6;
+
+a *= 5;
+b *= 3;
+c *= 10;
+
+// The /= operator divides a variable by another number
+// Convert the assignments for a, b, and c to use the /= operator
+let a = 48;
+let b = 108;
+let c = 33;
+
+a /= 12;
+b /= 4;
+c /= 11;
+
+/* In JS, you can escape a quote from considering it as an end of string quote by
+** placing a backslash (\) in front of the quote
+*/
+// Use backslashes to assign a string to the myStr variable
+const myStr = "I am a \"double quoted\" string inside \"double quotes\".";
+
+/* String values in JS may be written with single or double quotes,
+** as long as you start and end with the same type of quote.
+*/
+// Change the provided string to a string with single quotes at the beginning and end and no escape characters
+// Original string: const myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
+const myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
+
+/* You can use an escape also to allow you to use characters you may not otherwise be able to type out
+** such as a newline.
+*/
+// Assign the following three lines of text into the single variable myStr using escape sequences
