@@ -173,3 +173,177 @@ const myStr = "This is the start. " + "This is the end.";
 */
 let myStr = "This is the first sentence. ";
 myStr += "This is the second sentence.";
+
+// By using the + operator, you can insert one or more variables into a string
+// Set myName to a string equal to your name and build myStr with myName
+const myName = "Danny";
+const myStr = "My name is " + myName + " and I am well!";
+
+// We can also append variables to a string using the += operator
+// Set someAdjective to a string of at least 3 characters and append it to myStr
+const someAdjective = "majestic";
+let myStr = "Learning to code is "
+myStr += someAdjective;
+
+// You can find the length of a string value by writing .length
+// Use .length to set lastNameLength to the number of characters in lastName
+let lastNameLength = 0;
+const lastName = "Lovelace";
+lastNameLength = lastName.length;
+
+// Bracket notation is a way to get a character at a specific index within a string
+// Use bracket notation to find the first character in the lastName variable and assign it to firstLetterOfLastName
+let firstLetterOfLastName = "";
+const lastName = "Lovelace";
+firstLetterOfLastName = lastName[0];
+
+// In JS, string values are immutable, meaning they cannot be altered once created
+// Correct the assignment to myStr so it contains the string value "Hello World"
+let myStr = "Jello World";
+myStr = "Hello World" //Original code: myStr[0] = "H"
+
+// You can use bracket notation to get the character at other positions within a string
+// Set thirdLetterOfLastName to equal the third letter of the lastName variable
+const lastName = "Lovelace";
+const thirdLetterOfLastName = lastName[2];
+
+// In order to get the last letter of a string, you can subtract one from the string's length
+// Find the last character in the lastName variable
+const lastName = "Lovelace";
+const lastLetterOfLastName = lastName[lastName.length - 1];
+
+// The same principle goes for retrieving the Nth-to-last character
+// Find the second-to-last character in the lastName string
+const lastName = "Lovelace";
+const secondToLastLetterOfLastName = lastName[lastName.length - 2];
+
+/* Word Blanks Challenge:
+** In this challenge, we provide you with a noun, a verb, an adjective
+** and an adverb. You need to form a complete sentence using words of your choice,
+** along with the words we provide.
+*/
+const myNoun = "dog";
+const myAdjective = "big";
+const myVerb = "ran";
+const myAdverb = "quickly";
+const wordBlanks = "The " + myAdjective + " " + myNoun + " saw a fox and then " + myVerb + " " + myAdverb;
+
+// With JS array variables, we can store several pieces of data in one place
+// Modify the new array myArray so that it contains both a string and a number (in that order)
+const myArray = ["string", 3];
+
+// You can also nest arrays within other arrays, this is called a multi-dimensional array
+// Create a nested array called myArray
+const myArray = [["string1", 1], ["string2", 2]];
+
+// We can access the data inside arrays using indexes
+// Create a variable called myData and set it equal to the first value of myArray
+const myArray = [50, 60, 70];
+const myData = myArray[0];
+
+/* Unlike strings, the entries of arrays are mutable and can be changed freely,
+** even if the array was declared with const
+*/
+// Modify the data stored at index 0 of myArray to a value of 45
+const myArray = [18, 64, 99];
+myArray[0] = 45;
+
+// One way to think of a multi-dimensional array, is as an array of arrays.
+// Using bracket notation select an element from myArray such that myData is equal to 8
+const myArray = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [[10, 11, 12], 13, 14],
+];
+
+const myData = myArray[2][1];
+
+// An easy way to append data to the end of an array is the push() function
+// Push ["dog", 3] onto the end of the myArray variable
+const myArray = [["John", 23], ["cat", 2]];
+myArray.push(["dog", 3]);
+
+// .pop() is used to pop a value off of the end of an array
+// Pop the last item from myArray and assign the popped off value to a new variable, removedFromMyArray
+const myArray = [["John", 23], ["cat", 2]];
+const removedFromMyArray = myArray.pop();
+
+// .pop() always removes the last element of an array, .shift() removes the first element instead
+// Remove the first item from myArray and assign the value to a new variable, removedFromMyArray
+const myArray = [["John", 23], ["dog", 3]];
+const removedFromMyArray = myArray.shift();
+
+// .unshift() adds an element at the beginning of an array
+// Add ["Paul", 35] to myArray
+const myArray = [["John", 23], ["dog", 3]];
+myArray.shift();
+myArray.unshift(["Paul", 35]);
+
+/* Shopping List Challenge:
+** 1.) Create a shopping list in the variable myList. The list should be a multi-dimensional
+** array containing several sub-arrays.
+** 2.) The first element in each sub-array should contain a string with the name of the item.
+** The second element should be a number representing the quantity like ["Apple", 15]
+** 3.) There should be at least 5 sub-arrays in the list.
+*/
+const myList = [
+    ["Banana", 3],
+    ["Mayonnaise", 1],
+    ["Jello", 6],
+    ["Milk", 2],
+    ["Eggs", 12],
+];
+
+// In JS, we can divide our code into reusable parts called functions
+/* Create a function called reusableFunction which prints the string "Hi World", 
+** and called the function
+*/
+function reusableFunction() {
+    console.log("Hi World");
+}
+reusableFunction();
+
+/* Parameters are variables that act as placeholders for the values that are to be input
+** to a function when it is called. The actual values that are passed into a function
+** when it's called are known as arguments.
+*/
+/* 1.) Create a function called functionWithArgs that accepts two arguments and outputs their
+** sum to the dev console.
+** 2.) Call the function with two numbers as arguments.
+*/
+function functionWithArgs(a, b) {
+    console.log(a + b);
+}
+functionWithArgs(2, 3);
+
+// You can use a return statement to send a value back out of a function
+// Create a function timesFive that accepts one argument, multiplies it by 5, and returns the value
+function timesFive(a) {
+    return a * 5;
+}
+timesFive(5);
+
+/* In JS, scope refers to the visibility of variables. Variables which are defined outside
+** of a function block have Global scope. This means, they can be seen everywhere in your code.
+** Variables declared without the let or const keywords are automatically created 
+** in the global scope.
+*/
+/* 1.) Declare a global variable named myGlobal outside of any function. 
+** 2.) Initialize it with a value of 10
+** 3.) Inside function fun1, assign 5 to oopsGlobal without using the var, let, const keywords
+*/
+const myGlobal = 10;
+function fun1() {
+    oopsGlobal = 5;
+}
+function fun2() {
+    var output = "";
+    if (typeof myGlobal != "undefined") {
+        output += "myGlobal: " + myGlobal;
+    }
+    if (typeof oopsGlobal != "undefined") {
+        output += " oopsGlobal: " + oopsGlobal;
+    }
+    console.log(output);
+}
