@@ -162,3 +162,14 @@ const myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
 */
 // Assign the following three lines of text into the single variable myStr using escape sequences
 const myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
+
+// In JS, when the + operator is used with a string value, it is called the concatenation operator.
+// Build myStr from the strings "This is the start." and "This is the end." using the + operator
+const myStr = "This is the start. " + "This is the end.";
+
+// We can also use the += operator to concatenate a string onto the end of an existing string variable
+/* Build myStr over several lines by concatenating these two strings: 
+** "This is the first sentence." and "This is the second sentence."
+*/
+let myStr = "This is the first sentence. ";
+myStr += "This is the second sentence.";
