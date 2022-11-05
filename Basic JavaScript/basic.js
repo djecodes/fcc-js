@@ -347,3 +347,91 @@ function fun2() {
     }
     console.log(output);
 }
+
+/* Variables which are declared within a function, as well as
+** the function parameters, have local scope. That means they
+** are only visible within that function.
+*/
+// Declare a local variable myVar inside myLocalScope
+function myLocalScope() {
+    const myVar = "bar";
+    console.log('inside myLocalScope', myVar);
+}
+myLocalScope();
+
+console.log('outside myLocalScope', myVar);
+
+/* It is possible to have both local and global variables with
+** the same name. When you do this, the local variable takes
+** precedence over the global variable.
+*/
+/* Add a local variable to myOutfit function to override the 
+** value of outerWear with the string, "sweater".
+*/
+const outerWear = "T-Shirt";
+
+function myOutfit() {
+    const outerWear = "sweater";
+    return outerWear;
+}
+
+myOutfit();
+
+/* A function can include the return statement but it does not
+** have to. In the case that the function doesn't have a return
+** statement, when you call it, the function processes the inner
+** code but the returned vallue is undefined.
+*/
+/* Create a function addFive without any arguments. This function
+** adds 5 to the sum variable, but its returned value is undefined
+*/
+let sum = 0;
+
+function addThree() {
+    sum = sum + 3;
+}
+
+function addFive() {
+    sum = sum + 5;
+}
+
+addThree();
+addFive();
+
+/* We can take the return value of a function and assign it to a
+** variable.
+*/
+/* Call the processArg function with an argument of 7
+** and assign its return value to the variable processed
+*/
+let processed = 0;
+
+function processArg(num) {
+    return (num + 3) / 5;
+}
+
+processed = processArg(7);
+
+/* In Computer Science, a queue is an abstract Data Structure
+** where items are kept in order. New items can be added at the
+** back of the queue and old items are taken off from the front
+** of the queue.
+*/
+/* 1.) Write a function nextInLine which takes an array (arr)
+** and a number (item) as arguments
+** 2.) Add the number to the end of the array, then remove 
+** the first element of the array.
+** 3.) The nextInLine function should then return the element
+** that was removed.
+*/
+function nextInLine(arr, item) {
+    arr.push(item);
+    item = arr.shift();
+    return item;
+}
+
+let testArr = [1, 2, 3, 4, 5];
+
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6));
+console.log("After: " + JSON.stringify(testArr));
