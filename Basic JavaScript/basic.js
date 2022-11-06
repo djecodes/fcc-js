@@ -435,3 +435,11 @@ let testArr = [1, 2, 3, 4, 5];
 console.log("Before: " + JSON.stringify(testArr));
 console.log(nextInLine(testArr, 6));
 console.log("After: " + JSON.stringify(testArr));
+
+/* Boolean may only be one of two values: true or false. They are basically an on-off switch
+** where true is on and false is off
+*/
+// Modify welcomeToBooleans function so that it returns true instead of false
+function welcomeToBooleans() {
+    return true;
+}
