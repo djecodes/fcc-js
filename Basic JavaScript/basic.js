@@ -462,3 +462,71 @@ function trueOrFalse(wasThatTrue) {
     }
     return "No, that was false";
 }
+
+/* The equality operator compares two values and returns true if they're equivalent or false
+** if they're not. Note that equality is different from assignment (=), which assigns the
+** value on the right of the operator to a variable on the left.
+*/
+/* Add the equality operator to the indicated line so that the function will return
+** the string Equal when val is equivalent to 12.
+*/
+function testEqual(val) {
+    if (val == 12) {
+        return "Equal";
+    }
+    return "Not Equal";
+}
+
+testEqual(10);
+
+/* Strict equality (===) is the counterpart to the equality operator. Unlike the equality operator,
+** which attempts to convert both values being compared to a common type, the strict equality
+** operator does not perform a type conversion.
+** If the values being compared have different types, they are considered unequal and the strict
+** operator will return false.
+*/
+/* Use the strict equality operator in the if statement so the function will return the string
+** Equal when val is strictly equal to 7.
+*/
+function testStrict(val) {
+    if (val === 7) {
+        return "Equal";
+    }
+    return "Not Equal";
+}
+
+testStrict(10);
+
+/* If the values being compared are not of the same type, the equality operator will perform a
+** type conversion, and then evaluate the values. However, the strict equality operator will
+** compare both the data type and value as-is, without converting one type to the other.
+*/
+/* The compareEquality function in the editor compares two values using the equality operator.
+** Modify the function so that it returns the string Equal only when the values are strictly
+** equal.
+*/
+function compareEquality(a, b) {
+    if (a === b) {
+        return "Equal";
+    }
+    return "Not Equal"
+}
+
+compareEquality(10, "10");
+
+/* The inequality operator (!=) is the opposite of the equality operator. It means not equal
+** and returns false where equality would return true and vice versa. 
+** Like the equality operator, the inequality operator will convert data types of values
+** while comparing.
+*/
+/* Add the inequality operator != in the if statement so that the function will return
+** Not Equal when val is not equivalent to 99
+*/
+function testNotEqual(val) {
+    if (val != 99) {
+        return "Not Equal";
+    }
+    return "Equal";
+}
+
+testNotEqual(10);
