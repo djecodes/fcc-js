@@ -530,3 +530,21 @@ function testNotEqual(val) {
 }
 
 testNotEqual(10);
+
+/* The strict inequality (!==) is the logical opposite of the strict
+** equality operator. It means "Strictly Not Equal" and returns false
+** where strict equality would return true and vice versa.
+** 
+** !== will not convert data types.
+*/
+/* Add !== to the if statement so the function will return the string
+** Not Equal when val is not strictly equal to 17
+*/
+function testStrictNotEqual(val) {
+    if (val !== 17) {
+        return "Not Equal";
+    }
+    return "Equal";
+}
+
+testStrictNotEqual(10);
