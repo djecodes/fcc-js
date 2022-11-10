@@ -532,14 +532,15 @@ function testNotEqual(val) {
 testNotEqual(10);
 
 /* The strict inequality (!==) is the logical opposite of the strict
-** equality operator. It means "Strictly Not Equal" and returns false
-** where strict equality would return true and vice versa.
-** 
-** !== will not convert data types.
-*/
+ * equality operator. It means "Strictly Not Equal" and returns false
+ * where strict equality would return true and vice versa.
+ * 
+ * !== will not convert data types.
+ */
+
 /* Add !== to the if statement so the function will return the string
-** Not Equal when val is not strictly equal to 17
-*/
+ * Not Equal when val is not strictly equal to 17
+ */
 function testStrictNotEqual(val) {
     if (val !== 17) {
         return "Not Equal";
@@ -548,3 +549,51 @@ function testStrictNotEqual(val) {
 }
 
 testStrictNotEqual(10);
+
+/* The greater operator (>) compares the value of two numbers.
+ * If the number to the left is greater than the number to the right,
+ * it returns true. Otherwise, it returns false.
+ * 
+ * Like the equality operator, the greater than operator will convert
+ * data types of values while comparing.
+ */
+/* Add the greater than operator to the indicated lines so that the return
+ * statements make sense.
+ */
+function testGreaterThan(val) {
+    if (val > 100) {
+        return "Over 100";
+    }
+
+    if (val > 10) {
+        return "Over 10";
+    }
+
+    return "10 or Under";
+}
+
+testGreaterThan(10);
+
+/* The greater than or equal to operator (>=) compares the value of two
+ * numbers. If the number to the left is greater than or equal to the number
+ * to the right, it returns true. Otherwise, it returns false.
+ * 
+ * Like the equality operator, the greater than or equal to operator will convert
+ * data types while comparing.
+ */
+/* Add the greater than or equal to operator to the indicted lines so that the return
+ * statements make sense.
+ */
+function testGreaterOrEqual(val) {
+    if (val >= 20) {
+        return "20 or Over";
+    }
+
+    if (val >= 10) {
+        return "10 or Over";
+    }
+    
+    return "Less than 10";
+}
+
+testGreaterOrEqual(10);
