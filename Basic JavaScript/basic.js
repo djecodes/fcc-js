@@ -597,3 +597,141 @@ function testGreaterOrEqual(val) {
 }
 
 testGreaterOrEqual(10);
+
+/* The less than operator (<) compares the value of two numbers.
+ * If the number to the left is less than the number to the right
+ * it returns true. Otherwise, it returns false.
+ * Like the equality operator, the > operator converts data types while comparing.
+ */
+// Add the > operator to the indicated lines so that the return statement makes sense
+function testLessThan(val) {
+    if (val < 25) {
+        return "Under 25";
+    }
+
+    if (val < 55) {
+        return "Under 55";
+    }
+
+    return "55 or Over";
+}
+
+testLessThan(10);
+
+/* The less than or equal operator (<=) compares the value of two numbers.
+ * If the number to the left is less than or equal to the number to the right
+ * it returns true. If the number on the left is greater than the number to the right
+ * it returns false. The <= operator converts data types.
+ */
+// Add the <= operator to the indicated lines so that the return statement makes sense
+function testLessOrEqual(val) {
+    if (val <= 12) {
+        return "Smaller Than or Equal to 12";
+    }
+
+    if (val <= 24) {
+        return "Smaller Than or Equal to 24";
+    }
+
+    return "More Than 24";
+}
+
+testLessOrEqual(10);
+
+/* The logical and operator (&&) returns true if and only if the operands to the left
+ * and right of it are true.
+ */
+/* Replace the two if statements with one statement, using the && operator
+ * which will return the string Yes if val is <= 50 and >= 25, otherwise return the string No.
+ */
+function testLogicalAnd(val) {
+    if (val <= 50 && val >= 25) {
+        return "Yes";
+    }
+
+    return "No"
+}
+
+testLogicalAnd(10);
+
+// The logical or operator (||) returns true if either of the operands is true. Otherwise, it returns false
+// return the string Outside if val is not between 10 and 20, inclusive. Otherwise return the string Inside.
+function testLogicalOr(val) {
+    if (val < 10 || val > 20) {
+        return "Outside";
+    }
+
+    return "Inside";
+}
+
+testLogicalOr(15);
+
+// An else statement is an alternate block of code which can be executed if the prior if statement is false
+// Combine the if statements into a single if/else statement
+
+function testElse(val) {
+    let result = "";
+
+    if (val > 5) {
+        result = "Bigger than 5";
+    } else {
+        result = "5 or Smaller";
+    }
+    
+    return result;
+}
+
+testElse(4);
+
+// You can chain if statements together with else if.
+// Convert the logic to use else if statements
+function testElseIf(val) {
+    if (val > 10) {
+        return "Greater than 10";
+    } else if (val < 5) {
+        return "Smaller than 5";
+    } else {
+        return "Between 5 and 10";
+    }
+}
+
+testElseIf(7);
+
+/* Golf Code Challenge:
+ * In the game of Golf, each hole has a par, meaning, the average number of strokes a golfer is expected
+ * to make in order to sink the ball in the hole to complete the play. Depending on how far above or below
+ * par your strokes are, there is a different nickname.
+ * 
+ * Your function will be passed "par" and "strokes" arguments. Return the correct string according to this
+ * table which lists the strokes in order of priority; top(highest) to bottom(lowest):
+ * 1 returns "Hole-in-one!"
+ * <= par - 2 returns "Eagle"
+ * par - 1 returns "Birdie"
+ * par + 1 returns "Bogey"
+ * par + 2 returns "Double Bogey"
+ * >= par + 3 returns "Go Home!"
+ * 
+ * par and strokes will always be numeric and positive.
+ */
+const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
+
+function golfScore(par, strokes) {
+    if (strokes == 1) {
+        return names[0];
+    } else if (strokes <= par - 2) {
+        return names[1];
+    } else if (strokes == par - 1) {
+        return names[2];
+    } else if (strokes == par) {
+        return names[3];
+    } else if (strokes == par + 1) {
+        return names[4];
+    } else if (strokes == par + 2) {
+        return names[5];
+    } else {
+        return names[6];
+    }
+    
+}
+
+golfScore(5, 4);
