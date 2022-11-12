@@ -14,21 +14,21 @@ var a;
 a = 7;
 
 /* After a value is assigned to a variable using the assignment operator
-** you can assign the value of that variable to another variable.
-*/
+ ** you can assign the value of that variable to another variable.
+ */
 var a;
 a = 7;
 var b;
 b = a;
 
 /* It's common to initalize a variable to an initial value in the same line
-** as it is declared.
-*/
+ ** as it is declared.
+ */
 var a = 9;
 
 /* A string literal, or string, is a series of zero or more character enclosed
-** enclosed in single or double quotes
-*/
+ ** enclosed in single or double quotes
+ */
 var myFirstName = "Danny"
 var myLastName = "E."
 
@@ -51,8 +51,8 @@ let catName = "Oliver";
 let catSound = "Meow!";
 
 /* Constants are read-only, and they are a constant value which means that once a variable is 
-** assigned with const, it cannot be reassigned.
-*/
+ ** assigned with const, it cannot be reassigned.
+ */
 // Change the code so all variables declared using let or const properly
 const FCC = "freeCodeCamp";
 let fact = "is cool!";
@@ -102,9 +102,9 @@ const quotient = 4.4 / 2.0;
 const remainder = 11 % 3;
 
 /* In programming, it is common to use assignments to modify the contents of a variable.
-** There are operators which do both mathematical operation and assignment in one step.
-** One such operator is +=
-*/
+ ** There are operators which do both mathematical operation and assignment in one step.
+ ** One such operator is +=
+ */
 // Convert the assignments for a, b, and c to use the += operator
 let a = 3;
 let b = 17;
@@ -145,21 +145,21 @@ b /= 4;
 c /= 11;
 
 /* In JS, you can escape a quote from considering it as an end of string quote by
-** placing a backslash (\) in front of the quote
-*/
+ ** placing a backslash (\) in front of the quote
+ */
 // Use backslashes to assign a string to the myStr variable
 const myStr = "I am a \"double quoted\" string inside \"double quotes\".";
 
 /* String values in JS may be written with single or double quotes,
-** as long as you start and end with the same type of quote.
-*/
+ ** as long as you start and end with the same type of quote.
+ */
 // Change the provided string to a string with single quotes at the beginning and end and no escape characters
 // Original string: const myStr = "<a href=\"http://www.example.com\" target=\"_blank\">Link</a>";
 const myStr = '<a href="http://www.example.com" target="_blank">Link</a>';
 
 /* You can use an escape also to allow you to use characters you may not otherwise be able to type out
-** such as a newline.
-*/
+ ** such as a newline.
+ */
 // Assign the following three lines of text into the single variable myStr using escape sequences
 const myStr = "FirstLine\n\t\\SecondLine\nThirdLine";
 
@@ -169,8 +169,8 @@ const myStr = "This is the start. " + "This is the end.";
 
 // We can also use the += operator to concatenate a string onto the end of an existing string variable
 /* Build myStr over several lines by concatenating these two strings: 
-** "This is the first sentence." and "This is the second sentence."
-*/
+ ** "This is the first sentence." and "This is the second sentence."
+ */
 let myStr = "This is the first sentence. ";
 myStr += "This is the second sentence.";
 
@@ -218,10 +218,10 @@ const lastName = "Lovelace";
 const secondToLastLetterOfLastName = lastName[lastName.length - 2];
 
 /* Word Blanks Challenge:
-** In this challenge, we provide you with a noun, a verb, an adjective
-** and an adverb. You need to form a complete sentence using words of your choice,
-** along with the words we provide.
-*/
+ ** In this challenge, we provide you with a noun, a verb, an adjective
+ ** and an adverb. You need to form a complete sentence using words of your choice,
+ ** along with the words we provide.
+ */
 const myNoun = "dog";
 const myAdjective = "big";
 const myVerb = "ran";
@@ -234,7 +234,10 @@ const myArray = ["string", 3];
 
 // You can also nest arrays within other arrays, this is called a multi-dimensional array
 // Create a nested array called myArray
-const myArray = [["string1", 1], ["string2", 2]];
+const myArray = [
+    ["string1", 1],
+    ["string2", 2]
+];
 
 // We can access the data inside arrays using indexes
 // Create a variable called myData and set it equal to the first value of myArray
@@ -242,8 +245,8 @@ const myArray = [50, 60, 70];
 const myData = myArray[0];
 
 /* Unlike strings, the entries of arrays are mutable and can be changed freely,
-** even if the array was declared with const
-*/
+ ** even if the array was declared with const
+ */
 // Modify the data stored at index 0 of myArray to a value of 45
 const myArray = [18, 64, 99];
 myArray[0] = 45;
@@ -254,39 +257,53 @@ const myArray = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
-    [[10, 11, 12], 13, 14],
+    [
+        [10, 11, 12], 13, 14
+    ],
 ];
 
 const myData = myArray[2][1];
 
 // An easy way to append data to the end of an array is the push() function
 // Push ["dog", 3] onto the end of the myArray variable
-const myArray = [["John", 23], ["cat", 2]];
+const myArray = [
+    ["John", 23],
+    ["cat", 2]
+];
 myArray.push(["dog", 3]);
 
 // .pop() is used to pop a value off of the end of an array
 // Pop the last item from myArray and assign the popped off value to a new variable, removedFromMyArray
-const myArray = [["John", 23], ["cat", 2]];
+const myArray = [
+    ["John", 23],
+    ["cat", 2]
+];
 const removedFromMyArray = myArray.pop();
 
 // .pop() always removes the last element of an array, .shift() removes the first element instead
 // Remove the first item from myArray and assign the value to a new variable, removedFromMyArray
-const myArray = [["John", 23], ["dog", 3]];
+const myArray = [
+    ["John", 23],
+    ["dog", 3]
+];
 const removedFromMyArray = myArray.shift();
 
 // .unshift() adds an element at the beginning of an array
 // Add ["Paul", 35] to myArray
-const myArray = [["John", 23], ["dog", 3]];
+const myArray = [
+    ["John", 23],
+    ["dog", 3]
+];
 myArray.shift();
 myArray.unshift(["Paul", 35]);
 
 /* Shopping List Challenge:
-** 1.) Create a shopping list in the variable myList. The list should be a multi-dimensional
-** array containing several sub-arrays.
-** 2.) The first element in each sub-array should contain a string with the name of the item.
-** The second element should be a number representing the quantity like ["Apple", 15]
-** 3.) There should be at least 5 sub-arrays in the list.
-*/
+ ** 1.) Create a shopping list in the variable myList. The list should be a multi-dimensional
+ ** array containing several sub-arrays.
+ ** 2.) The first element in each sub-array should contain a string with the name of the item.
+ ** The second element should be a number representing the quantity like ["Apple", 15]
+ ** 3.) There should be at least 5 sub-arrays in the list.
+ */
 const myList = [
     ["Banana", 3],
     ["Mayonnaise", 1],
@@ -297,21 +314,21 @@ const myList = [
 
 // In JS, we can divide our code into reusable parts called functions
 /* Create a function called reusableFunction which prints the string "Hi World", 
-** and called the function
-*/
+ ** and called the function
+ */
 function reusableFunction() {
     console.log("Hi World");
 }
 reusableFunction();
 
 /* Parameters are variables that act as placeholders for the values that are to be input
-** to a function when it is called. The actual values that are passed into a function
-** when it's called are known as arguments.
-*/
+ ** to a function when it is called. The actual values that are passed into a function
+ ** when it's called are known as arguments.
+ */
 /* 1.) Create a function called functionWithArgs that accepts two arguments and outputs their
-** sum to the dev console.
-** 2.) Call the function with two numbers as arguments.
-*/
+ ** sum to the dev console.
+ ** 2.) Call the function with two numbers as arguments.
+ */
 function functionWithArgs(a, b) {
     console.log(a + b);
 }
@@ -325,18 +342,20 @@ function timesFive(a) {
 timesFive(5);
 
 /* In JS, scope refers to the visibility of variables. Variables which are defined outside
-** of a function block have Global scope. This means, they can be seen everywhere in your code.
-** Variables declared without the let or const keywords are automatically created 
-** in the global scope.
-*/
+ ** of a function block have Global scope. This means, they can be seen everywhere in your code.
+ ** Variables declared without the let or const keywords are automatically created 
+ ** in the global scope.
+ */
 /* 1.) Declare a global variable named myGlobal outside of any function. 
-** 2.) Initialize it with a value of 10
-** 3.) Inside function fun1, assign 5 to oopsGlobal without using the var, let, const keywords
-*/
+ ** 2.) Initialize it with a value of 10
+ ** 3.) Inside function fun1, assign 5 to oopsGlobal without using the var, let, const keywords
+ */
 const myGlobal = 10;
+
 function fun1() {
     oopsGlobal = 5;
 }
+
 function fun2() {
     var output = "";
     if (typeof myGlobal != "undefined") {
@@ -349,9 +368,9 @@ function fun2() {
 }
 
 /* Variables which are declared within a function, as well as
-** the function parameters, have local scope. That means they
-** are only visible within that function.
-*/
+ ** the function parameters, have local scope. That means they
+ ** are only visible within that function.
+ */
 // Declare a local variable myVar inside myLocalScope
 function myLocalScope() {
     const myVar = "bar";
@@ -362,12 +381,12 @@ myLocalScope();
 console.log('outside myLocalScope', myVar);
 
 /* It is possible to have both local and global variables with
-** the same name. When you do this, the local variable takes
-** precedence over the global variable.
-*/
+ ** the same name. When you do this, the local variable takes
+ ** precedence over the global variable.
+ */
 /* Add a local variable to myOutfit function to override the 
-** value of outerWear with the string, "sweater".
-*/
+ ** value of outerWear with the string, "sweater".
+ */
 const outerWear = "T-Shirt";
 
 function myOutfit() {
@@ -378,13 +397,13 @@ function myOutfit() {
 myOutfit();
 
 /* A function can include the return statement but it does not
-** have to. In the case that the function doesn't have a return
-** statement, when you call it, the function processes the inner
-** code but the returned vallue is undefined.
-*/
+ ** have to. In the case that the function doesn't have a return
+ ** statement, when you call it, the function processes the inner
+ ** code but the returned vallue is undefined.
+ */
 /* Create a function addFive without any arguments. This function
-** adds 5 to the sum variable, but its returned value is undefined
-*/
+ ** adds 5 to the sum variable, but its returned value is undefined
+ */
 let sum = 0;
 
 function addThree() {
@@ -399,11 +418,11 @@ addThree();
 addFive();
 
 /* We can take the return value of a function and assign it to a
-** variable.
-*/
+ ** variable.
+ */
 /* Call the processArg function with an argument of 7
-** and assign its return value to the variable processed
-*/
+ ** and assign its return value to the variable processed
+ */
 let processed = 0;
 
 function processArg(num) {
@@ -413,17 +432,17 @@ function processArg(num) {
 processed = processArg(7);
 
 /* In Computer Science, a queue is an abstract Data Structure
-** where items are kept in order. New items can be added at the
-** back of the queue and old items are taken off from the front
-** of the queue.
-*/
+ ** where items are kept in order. New items can be added at the
+ ** back of the queue and old items are taken off from the front
+ ** of the queue.
+ */
 /* 1.) Write a function nextInLine which takes an array (arr)
-** and a number (item) as arguments
-** 2.) Add the number to the end of the array, then remove 
-** the first element of the array.
-** 3.) The nextInLine function should then return the element
-** that was removed.
-*/
+ ** and a number (item) as arguments
+ ** 2.) Add the number to the end of the array, then remove 
+ ** the first element of the array.
+ ** 3.) The nextInLine function should then return the element
+ ** that was removed.
+ */
 function nextInLine(arr, item) {
     arr.push(item);
     item = arr.shift();
@@ -437,25 +456,25 @@ console.log(nextInLine(testArr, 6));
 console.log("After: " + JSON.stringify(testArr));
 
 /* Boolean may only be one of two values: true or false. They are basically an on-off switch
-** where true is on and false is off
-*/
+ ** where true is on and false is off
+ */
 // Modify welcomeToBooleans function so that it returns true instead of false
 function welcomeToBooleans() {
     return true;
 }
 
 /* if statements are used to make decisions in code. The keyword 'if' tells JS to execute
-** the code in the curly braces under certain conditions, defined in the parentheses. These
-** conditions are known as Boolean conditions and they may only be true or false.
-**
-** When the condition evaluates to true, the program executes the statement inside the curly
-** braces.
-** When the condition evaluates to false, the statement inside the curly braces will not
-** execute.
-*/
+ ** the code in the curly braces under certain conditions, defined in the parentheses. These
+ ** conditions are known as Boolean conditions and they may only be true or false.
+ **
+ ** When the condition evaluates to true, the program executes the statement inside the curly
+ ** braces.
+ ** When the condition evaluates to false, the statement inside the curly braces will not
+ ** execute.
+ */
 /* Create an if statement inside the function to return "Yes, that was true" if the parameter
-** wasThatTrue is true and return "No, that was false" otherwise.
-*/
+ ** wasThatTrue is true and return "No, that was false" otherwise.
+ */
 function trueOrFalse(wasThatTrue) {
     if (wasThatTrue == true) {
         return "Yes, that was true";
@@ -464,12 +483,12 @@ function trueOrFalse(wasThatTrue) {
 }
 
 /* The equality operator compares two values and returns true if they're equivalent or false
-** if they're not. Note that equality is different from assignment (=), which assigns the
-** value on the right of the operator to a variable on the left.
-*/
+ ** if they're not. Note that equality is different from assignment (=), which assigns the
+ ** value on the right of the operator to a variable on the left.
+ */
 /* Add the equality operator to the indicated line so that the function will return
-** the string Equal when val is equivalent to 12.
-*/
+ ** the string Equal when val is equivalent to 12.
+ */
 function testEqual(val) {
     if (val == 12) {
         return "Equal";
@@ -480,14 +499,14 @@ function testEqual(val) {
 testEqual(10);
 
 /* Strict equality (===) is the counterpart to the equality operator. Unlike the equality operator,
-** which attempts to convert both values being compared to a common type, the strict equality
-** operator does not perform a type conversion.
-** If the values being compared have different types, they are considered unequal and the strict
-** operator will return false.
-*/
+ ** which attempts to convert both values being compared to a common type, the strict equality
+ ** operator does not perform a type conversion.
+ ** If the values being compared have different types, they are considered unequal and the strict
+ ** operator will return false.
+ */
 /* Use the strict equality operator in the if statement so the function will return the string
-** Equal when val is strictly equal to 7.
-*/
+ ** Equal when val is strictly equal to 7.
+ */
 function testStrict(val) {
     if (val === 7) {
         return "Equal";
@@ -498,13 +517,13 @@ function testStrict(val) {
 testStrict(10);
 
 /* If the values being compared are not of the same type, the equality operator will perform a
-** type conversion, and then evaluate the values. However, the strict equality operator will
-** compare both the data type and value as-is, without converting one type to the other.
-*/
+ ** type conversion, and then evaluate the values. However, the strict equality operator will
+ ** compare both the data type and value as-is, without converting one type to the other.
+ */
 /* The compareEquality function in the editor compares two values using the equality operator.
-** Modify the function so that it returns the string Equal only when the values are strictly
-** equal.
-*/
+ ** Modify the function so that it returns the string Equal only when the values are strictly
+ ** equal.
+ */
 function compareEquality(a, b) {
     if (a === b) {
         return "Equal";
@@ -515,13 +534,13 @@ function compareEquality(a, b) {
 compareEquality(10, "10");
 
 /* The inequality operator (!=) is the opposite of the equality operator. It means not equal
-** and returns false where equality would return true and vice versa. 
-** Like the equality operator, the inequality operator will convert data types of values
-** while comparing.
-*/
+ ** and returns false where equality would return true and vice versa. 
+ ** Like the equality operator, the inequality operator will convert data types of values
+ ** while comparing.
+ */
 /* Add the inequality operator != in the if statement so that the function will return
-** Not Equal when val is not equivalent to 99
-*/
+ ** Not Equal when val is not equivalent to 99
+ */
 function testNotEqual(val) {
     if (val != 99) {
         return "Not Equal";
@@ -592,7 +611,7 @@ function testGreaterOrEqual(val) {
     if (val >= 10) {
         return "10 or Over";
     }
-    
+
     return "Less than 10";
 }
 
@@ -677,7 +696,7 @@ function testElse(val) {
     } else {
         result = "5 or Smaller";
     }
-    
+
     return result;
 }
 
@@ -731,7 +750,7 @@ function golfScore(par, strokes) {
     } else {
         return names[6];
     }
-    
+
 }
 
 golfScore(5, 4);
@@ -745,7 +764,7 @@ golfScore(5, 4);
  * 3 - gamma
  * 4 - delta
  */
-function caseInSwitch(val){
+function caseInSwitch(val) {
     let answer = "";
 
     switch (val) {
@@ -777,10 +796,10 @@ caseInSwitch(1);
  * c - cat
  * default - stuff
  */
-function switchOfStuff(val){
+function switchOfStuff(val) {
     let answer = "";
 
-    switch(val) {
+    switch (val) {
         case "a":
             answer = "apple";
             break;
@@ -811,7 +830,7 @@ switchOfStuff(1);
 function sequentialSizes(val) {
     let answer = "";
 
-    switch(val) {
+    switch (val) {
         case 1:
         case 2:
         case 3:
@@ -838,7 +857,7 @@ sequentialSizes(1);
 function chainToSwitch(val) {
     let answer = "";
 
-    switch(val) {
+    switch (val) {
         case "bob":
             answer = "Marley";
             break;
@@ -872,7 +891,7 @@ chainToSwitch(7);
  *      return false;
  * }
  */
-function isLess(a, b){
+function isLess(a, b) {
     return a < b;
 }
 
@@ -885,7 +904,7 @@ isLess(10, 15);
  * a value of undefined
  */
 function abTest(a, b) {
-    if (a < 0 || b < 0){
+    if (a < 0 || b < 0) {
         return undefined;
     }
 
@@ -923,7 +942,7 @@ let count = 0;
 
 function cc(card) {
 
-    switch(card) {
+    switch (card) {
         case 2:
         case 3:
         case 4:
@@ -952,7 +971,11 @@ function cc(card) {
     }
 }
 
-cc(2); cc(3); cc(7); cc('K'); cc('A');
+cc(2);
+cc(3);
+cc(7);
+cc('K');
+cc('A');
 
 // Objects are useful for storing data, through properties, and can represent real world objects, like a cat
 // Make an object that represents a dog called myDog
@@ -1039,3 +1062,114 @@ const myDog = {
 };
 
 delete myDog.tails;
+
+/* Objects can be thought of as  a key/value storage, like a dictionary.
+ * If you have tabular data, you can use an object to lookup values rather than a switch statement
+ * or an if/else chain. This is most useful when you know that your input data is limited to a certain
+ * range.
+ */
+/* Convert the switch statement into an object called 'lookup'. Use it to look up val and assign the
+ * associated string to the result variable.
+ */
+function phoneticLookup(val) {
+
+    const lookup = {
+        "alpha": "Adams",
+        "bravo": "Boston",
+        "charlie": "Chicago",
+        "delta": "Denver",
+        "echo": "Easy",
+        "foxtrot": "Frank"
+    };
+
+    let result = lookup[val];
+
+    return result;
+}
+
+phoneticLookup("charlie");
+
+/* Sometimes it is useful to check if the property of a given object exists or not.
+ * We can use the .hasOwnProperty(propname) method of objects to determine if that object has given
+ * property name.
+ * .hasOwnProperty() returns true or false if the property is found or not.
+ */
+/* Modify the function checkObj to test if an object passed to the function (obj) contains a specific
+ * property (checkProp). If the property is found, return that property's value 
+ */
+function checkObj(obj, checkProp) {
+    if (obj.hasOwnProperty(checkProp)) {
+        return obj[checkProp];
+    } else {
+        return "Not Found";
+    }
+}
+
+/* Sometimes you want to store data in a flexible Data Structure. 
+ * A JavaScript object is one way to handle flexible data.
+ * They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects
+ */
+/* Add a new album to the myMusic array. Add artist and title strings, release_year number, and a formats
+ * array of strings
+ */
+const myMusic = [{
+    "artist": "Billy Joel",
+    "title": "Piano Man",
+    "release_year": 1973,
+    "formats": [
+        "CD",
+        "8T",
+        "LP"
+    ],
+    "gold": true
+}, {
+    "artist": "Daft Punk",
+    "title": "Homework",
+    "release_year": 1997,
+    "formats": [
+        "CD",
+        "Cassette",
+        "LP"
+    ],
+    "gold": true
+}];
+
+// The sub-properties of objects can be accessed by chaining together the dot or bracket notation.
+/* Access the myStorage object and assign the contents of the glove box property to the gloveBoxContents
+ * variable. Use dot notation for all properties where possible, otherwise use bracket notation.
+ */
+const myStorage = {
+    "car": {
+        "inside": {
+            "glove box": "maps",
+            "passenger seat": "crumbs"
+        },
+        "outside": {
+            "trunk": "jack"
+        }
+    }
+};
+
+const gloveBoxContents = myStorage.car.inside["glove box"];
+
+// Similar to accessing nested objects, array bracket notation can be chained to access nested arrays
+/* Using dot and bracket notation, 
+ * set the variable secondTree to the second item in the trees list from the myPlants object.
+ */
+const myPlants = [{
+    type: "flowers",
+    list: [
+        "rose",
+        "tulip",
+        "dandelion"
+    ]
+}, {
+    type: "trees",
+    list: [
+        "fir",
+        "pine",
+        "birch"
+    ]
+}];
+
+const secondTree = myPlants[1].list[1];
