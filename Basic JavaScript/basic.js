@@ -962,3 +962,80 @@ const myDog = {
     "tails": 1,
     "friends": ["Lucy", "Oats"]
 };
+
+// Dot notation is what you use when you know the name of the property you're trying to access ahead of time
+/* Read in the property values of testObj using dot notation.
+ * Set the variable hatValue equal to the object's property hat.
+ * Set the variable shirtValue equal to the object's property shirt.
+ */
+const testObj = {
+    "hat": "ballcap",
+    "shirt": "jersey",
+    "shoes": "cleats"
+};
+
+const hatValue = testObj.hat;
+const shirtValue = testObj.shirt;
+
+/* Bracket notation is another way to access the properties of an object.
+ * If the property of the object you were trying to access has a space in its name
+ * you will still need to use bracket notation.
+ */
+const testObj = {
+    "an entree": "hamburger",
+    "my side": "veggies",
+    "the drink": "water"
+};
+
+const entreeValue = testObj["an entree"];
+const drinkValue = testObj["the drink"];
+
+/* Another use of bracket notation on objects is to access a property which is stored as the value of a
+ * variable. This can be very useful for iterating through an object's properties or when accessing a
+ * lookup table.
+ */
+const testObj = {
+    12: "Namath",
+    16: "Montana",
+    19: "Unitas"
+};
+
+const playerNumber = 16;
+const player = testObj[playerNumber];
+
+/* After you've created a JavaScript object, you can update its properties at any time just like you would
+ * any other variable. You can use either dot or bracket notation to update.
+ */
+// Update the myDog object's name property.
+
+const myDog = {
+    "name": "Coder",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["freeCodeCamp Campers"]
+}
+
+myDog["name"] = "Happy Coder";
+
+// You can add new properties to existing JS objects the same way you would modifying them
+// Add a bark property to myDog
+const myDog = {
+    "name": "Happy Coder",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["freeCodeCamp Campers"]
+};
+
+myDog.bark = "woof";
+
+// We can also delete properties from objects
+// Delete the tails property from myDog
+const myDog = {
+    "name": "Happy Coder",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["freeCodeCamp Campers"],
+    "bark": "woof"
+};
+
+delete myDog.tails;
