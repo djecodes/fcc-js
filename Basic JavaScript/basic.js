@@ -1227,3 +1227,63 @@ function updateRecords(records, id, prop, value) {
 }
 
 updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+
+// While loops runs while a specified condition is true and stops once that condition isn't true
+// Add the numbers 5 through 0 in descending order to myArray using a while loop.
+const myArray = [];
+let i = 5;
+
+while (i >= 0) {
+    myArray.push(i);
+    i--;
+}
+
+// For loops run for a specific number of times.
+// Add the numbers 1 through 5 to myArray using a for loop
+const myArray = [];
+
+for (let i = 1; i < 6; i++){
+    myArray.push(i);
+}
+
+// For loops don't have to iterate one at a time.
+// Push the odd numbers from 1 through 9 to myArray using a for loop
+const myArray = [];
+
+for (let i = 1; i < 10; i += 2){
+    myArray.push(i);
+}
+
+// A for loop can also count backwards, so long as we can define the right condition
+// Push the odd numbers from 9 through 1 to myArray using a for loop.
+const myArray = [];
+
+for (let i = 9; i > 0; i -= 2) {
+    myArray.push(i);
+}
+
+// A common task in JS is to iterate through the contents of an array. One way is to use a for loop.
+// Use a for loop to add the value of each element of the myArr array to total
+const myArr = [2, 3, 4, 5, 6];
+
+let total = 0;
+for (let i = 0; i < myArr.length; i++) {
+    total += myArr[i];
+}
+
+/* If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop
+ * through both the array and any sub-arrays.
+ */
+function multiplyAll(arr){
+    let product = 1;
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            product *= arr[i][j];
+        }
+    }
+
+    return product;
+}
+
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
