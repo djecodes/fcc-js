@@ -1287,3 +1287,18 @@ function multiplyAll(arr){
 }
 
 multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+
+/* A do...while loop will first do one pass of the code inside the loop no matter what, then continue
+ * to run the loop while the specified condition evaluates to true.
+ * What makes do...while loops different is how it behaves when the condition fails on the first check.
+ */
+/* Change the while loop in the code to a do...while loop so the loop will push only the number 10 to
+ * myArray and 'i' will be equal to 11 when your code has finished running.
+ */
+const myArray = [];
+let i = 10;
+
+do {
+    myArray.push(i);
+    i++;
+} while (i < 11);
