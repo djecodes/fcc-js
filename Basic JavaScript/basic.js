@@ -1302,3 +1302,6 @@ do {
     myArray.push(i);
     i++;
 } while (i < 11);
+
+/* Recursion is the concept that a function can be expressed in terms of itself */
+// Write a recursive function, sum(arr, n), that returns the sum of the first n elements of an array, arr.
