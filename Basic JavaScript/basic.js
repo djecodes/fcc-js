@@ -1431,3 +1431,48 @@ function checkSign(num) {
 }
 
 checkSign(10);
+
+/* Use Recursion to Create a Countdown:
+ * 
+ * As mentioned in the previous challenge, there will be a base case. The base case tells the recursive
+ * function when it no longer needs to call itself. It is a simple case where the return value is already
+ * known. There will also be a recursive call which executes the original function with different arguments.
+ * If the function is written correctly, eventually the base case will be reached.
+ * 
+ * For example, say you want to write a recursive function that returns an array containing the numbers 1
+ * through n. This function will need to accept an argument, n, representing the final number. Then it will
+ * need to call itself with progressively smaller values of n until it reaches 1.
+ */
+/* We defined a function called countdown with one parameter (n).
+ * The function should use recursion to return an array containing the integers n through 1 based on the n
+ * parameter.
+ * If the function is called with a number less than 1, the function should return an empty array.
+ */
+function countdown(n) {
+    if (n < 1) {
+        return [];
+    } else {
+        const countArray = countdown(n - 1);
+        countArray.unshift(n);
+        return countArray;
+    }
+}
+
+/* Use Recursion to Create a Range of Numbers:
+ *
+ * We have defined a function named rangeOfNumbers with two parameters.
+ * The function should return an array of integers which begins with a number represented by the startNum
+ * parameter and ends with a number represented by the endNum parameter.
+ * The starting number will always be less than or equal to the ending number.
+ * Your function must use recursion by calling itself and not use loops of any kind.
+ * It should also work for cases where both startNum and endNum are the same.
+ */
+function rangeOfNumbers(startNum, endNum) {
+    if (endNum < startNum) {
+        return [];
+    } else {
+        const countArray = rangeOfNumbers(startNum ,endNum - 1);
+        countArray.push(endNum);
+        return countArray;
+    }
+}
