@@ -1305,3 +1305,129 @@ do {
 
 /* Recursion is the concept that a function can be expressed in terms of itself */
 // Write a recursive function, sum(arr, n), that returns the sum of the first n elements of an array, arr.
+function sum(arr, n) {
+    if (n <= 0) {
+        return 0; 
+    } else {
+        return sum(arr, n - 1) + arr[n - 1];
+    }
+}
+
+/* Profile Lookup Challenge:
+ * We have an array of objects representing different people in our contacts list.
+ * 
+ * A lookUpProfile function that takes name and a property (prop) as arguments has been pre-written.
+ * 
+ * The function should check if name is an actual contact's firstName and the given property (prop)
+ * is a property of that contact.
+ * 
+ * If both are true, then return the 'value' of that property.
+ * 
+ * If name does not correspond to any contacts then return the string, No such contact.
+ * 
+ * If prop does not correspond to any valid properties of a contact found to match name then return the
+ * string No such property. 
+ */
+const contacts = [{
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+}, {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+}, {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+}, {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+}, ];
+
+function lookUpProfile(name, prop) {
+    for (let x = 0; x < contacts.length; x++) {
+        if (contacts[x].firstName === name) {
+            if (contacts[x].hasOwnProperty(prop)) {
+                return contacts[x][prop];
+            } else {
+                return "No such property";
+            }
+        }
+    }
+    return "No such contact";
+}
+
+lookUpProfile("Akira", "likes");
+
+/* Random numbers are useful for creating random behavior. JS has a Math.random() function that
+ * generates a random decimal number between 0 (inclusive) and 1 (exclusive). Thus, Math.random can
+ * return a 0 but never a 1
+ */
+// Change randomFraction to return a random number instead of returning 0
+function randomFraction() {
+    return Math.random();
+}
+
+/* It's even more useful if we use it to generate random whole numbers.
+ * 1. Use Math.random() to generate a random decimal
+ * 2. Multiply that random decimal by 20
+ * 3. Use Math.floor() to round the number down to its nearest whole number
+ * 
+ * Note: This technique will give us a whole number between 0 and 19
+ */
+// Use this technique to generate and return a random whole number between 0 and 9
+function randomWholeNum() {
+    return Math.floor(Math.random() * 10);
+}
+
+/* We can generate a random whole number that falls within a range of two specific numbers
+ * To do this, we'll define a minimum number min and a maximum number max.
+ */
+/* Create a function called randomRange that takes a range myMin and myMax and returns a random whole
+ * number that's greater than or equal to myMin and is less than or equal to myMax, inclusive.
+ */
+function randomRange(myMin, myMax) {
+    return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+}
+
+// The parseInt() function parses a string and returns an integer
+// Use parseInt() in the convertToInteger function
+function convertToInteger(str) {
+    return parseInt(str);
+}
+
+convertToInteger("56");
+
+/* parseInt() takes a second argument for the radix, which specifies the base of the number in the string
+ * The radix can be an integer between 2 and 36
+ */
+/* Use parseInt() in the convertToInteger function so it converts a binary number to an integer 
+ * and returns it.
+ */
+function convertToInteger(str) {
+    return parseInt(str, 2);
+}
+convertToInteger("10011");
+
+// The conditional operator, also called the ternary operator, can be used as a one line if-else expression
+// Use the conditional operator in the checkEqual function to check if two numbers are equal or not
+function checkEqual(a, b) {
+    return a == b ? "Equal" : "Not Equal";
+}
+
+checkEqual(1, 2);
+
+// You can also chain them together to check for multiple condition
+function checkSign(num) {
+    return (num == 0) ? "zero"
+    : (num < 0) ? "negative"
+    : "positive";
+}
+
+checkSign(10);
