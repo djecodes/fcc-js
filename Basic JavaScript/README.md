@@ -10,4 +10,4 @@ In the first course of nine total courses within freeCodeCamp's **__JavaScript A
 - If/else statements
 - Recursion
 
-The .js file within this folder contains all my written code solutions for the challenges within this module, commented with the learning objective of each module or the requirements of certain coding challenges in the module.
+The `.js` file within this folder contains all my written code solutions for the challenges within this module, commented with the learning objective of each module or the requirements of certain coding challenges in the module.
