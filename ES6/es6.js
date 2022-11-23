@@ -55,3 +55,24 @@ function freezeObj() {
     return MATH_CONSTANTS.PI;
 }
 const PI = freezeObj();
+
+/* ES6 allows us to write anonymous functions differently, this is called an arrow function
+ *
+ * Rewrite the function assigned to that variable magic which returns a new Date() to use arrow
+ * function syntax.
+ */
+const magic = () => new Date();
+
+/* Just like a regular function, you can pass arguments into an arrow function
+ *
+ * If an arrow function has a single parameter, the parentheses enclosing the parameter may be 
+ * omitted.
+ * 
+ * It is possible to pass more than one argument into an arrow function.
+ *
+ * Rewrite the myConcat function which appends contents of arr2 to arr1 so that the function uses
+ * arrow function syntax.
+ */
+const myConcat = (arr1, arr2) => arr1.concat(arr2);
+
+console.log(myConcat([1, 2], [3, 4, 5]));
