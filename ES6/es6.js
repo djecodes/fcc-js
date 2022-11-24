@@ -76,3 +76,64 @@ const magic = () => new Date();
 const myConcat = (arr1, arr2) => arr1.concat(arr2);
 
 console.log(myConcat([1, 2], [3, 4, 5]));
+
+/* In order to help us create more flexible functions, ES6 introduces default parameters for functions
+ *
+ * Modify the function increment by adding default parameters so that it will add 1 to number if value
+ * is not specified.
+ */
+const increment = (number, value = 1) => number + value;
+
+/* In order to help us create more flexible functions, ES6 introduces the rest parameter for function
+ * parameters.
+ *
+ * With the rest parameter, you can create functions that take a variable number of arguments. These
+ * arguments are stored in an array that can be accessed later from inside the function.
+ * 
+ * Modify the function sum using the rest parameter.
+ */
+const sum = (...args) => {
+    return args.reduce((a, b) => a + b, 0);
+}
+
+/* ES6 introduces the spread operator, which allows us to expand arrays and other expressions in places
+ * where multiple parameters or elements are expected.
+ *
+ * Copy all contents of arr1 into another array arr2 using the spread operator.
+ */
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+
+arr2 = [...arr1];
+
+console.log(arr2);
+
+/* Destructuring assignment is special syntax introduced in ES6, for neatly assigning values taken directly
+ * from an object.
+ *
+ * Replace the two assignments with an equivalent destructing assignment.
+ */
+const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+};
+
+/* Old ES5 way:
+ * const today = HIGH_TEMPERATURES.today;
+ * const tomorrow = HIGH_TEMPERATURES.tomorrow;
+ */
+const {today, tomorrow} = HIGH_TEMPERATURES;
+
+/* Destructuring allows you to assign a new variable name when extracting values. You can do this by
+ * putting the new name after a colon when assigning the value.
+ *
+ * Replace the two assignements with an equivalent destructuring assignment.
+ */
+const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+};
+
+const {today: highToday, tomorrow: highTomorrow} = HIGH_TEMPERATURES;
