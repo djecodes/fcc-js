@@ -137,3 +137,44 @@ const HIGH_TEMPERATURES = {
 };
 
 const {today: highToday, tomorrow: highTomorrow} = HIGH_TEMPERATURES;
+
+/* You can use the same principles from the previous two lessons to destructure values from nested objects
+ *
+ * Replace the two assignments with an equivalent destructuring assignment.
+ */
+const LOCAL_FORECAST = {
+    yesterday: { low: 61, high: 75 },
+    today: { low: 64, high: 77 },
+    tomorrow: { low: 68, high: 80 }
+};
+
+/* Original assignments:
+ * const lowToday = LOCAL_FORECAST.today.low;
+ * const highToday = LOCAL_FORECAST.today.high;
+ */
+const { today: { low: lowToday, high: highToday }} = LOCAL_FORECAST;
+
+/* ES6 makes destructuring arrays as easy as destructuring objects.
+ *
+ * One key difference between the spread operator and array destructuring is that the spread operator
+ * unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick or choose
+ * which elements you want to assign to variables.
+ * 
+ * Use destructuring assignment to swap the values of a and b so that a receives the value stored in b,
+ * and b receives the value stored in a.
+ */
+let a = 8, b = 6;
+[a, b] = [b, a];
+
+/* In some situations involving array destructuring, we might want to collect the rest of the elements
+ * into a separate array.
+ *
+ * Use a destructuring assignment with the rest parameter to emulate the behavior of Array.prototype.slice
+ */
+function removeFirstTwo(list) {
+    const [a, b, ...shorterList] = list; 
+    return shorterList;
+}
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
