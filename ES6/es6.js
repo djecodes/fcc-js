@@ -178,3 +178,87 @@ function removeFirstTwo(list) {
 
 const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const sourceWithoutFirstTwo = removeFirstTwo(source);
+
+/* In some cases, you can destructure the object in a function argument itself.
+ * Consider the code below:
+ * 
+ * const profileUpdate = (profileData) => {
+ *      const { name, age, nationality, location } = profileData;
+ * }
+ * 
+ * This effectively destructures the object sent into the function, This can also be done in-place:
+ * 
+ * const profileUpdate = ({ name, age, nationality, location}) => {
+ * 
+ * }
+ * 
+ * When profileData is passed to the above function, the values are destructured from the function parameter
+ * for use within the function.
+ * 
+ * Use destructuring assignment within the argument to the function half to send only max and min inside
+ * the function.
+ */
+const stats = {
+    max: 56.78,
+    standard_deviation: 4.34,
+    median: 34.54,
+    mode: 23.87,
+    min: -0.75,
+    average: 35.85
+};
+
+const half = ({ max, min }) => (max + min) / 2.0;
+
+/* A new feature of ES6 is the template literal. Template literals allow you to create multi-line strings
+ * and to use string interpolation features to create strings.
+ *
+ * Use template literal syntax with backticks to create an array of list element strings.
+ */
+const result = {
+    success: ["max-length", "no-amd", "prefer-arrow-functions"],
+    failure: ["no-var", "var-on-top", "linebreak"],
+    skipped: ["no-extra-semi", "no-dup-keys"]
+};
+function makeList(arr) {
+    const failureItems = [];
+    for (let i = 0; i < arr.length; i++) {
+        failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
+    }
+
+    return failureItems;
+}
+
+const failuresList = makeList(result.failure);
+
+/* ES6 adds some nice support for easily defining object literals.
+ * Consider the following code:
+ * 
+ * const getMousePosition = (x, y) => ({
+ *      x: x,
+ *      y: y
+ * });
+ * 
+ * ES6 provides the syntactic sugar to eliminate the redundancy of having to write x: x. You can simply
+ * write x once, and it will be converted to x: x under the hood. Here is the same function from above
+ * rewritten to use this new syntax:
+ * 
+ * const getMousePosition = (x, y) => ({ x, y });
+ * 
+ * Use objects property shorthand with obejct literals to create and return an object with name, age, and
+ * gender properties.
+ */
+const createPerson = (name, age, gender) => ({ name, age, gender });
+
+/* With ES6, you can remove the function keyword and colon altogether when defining functions in objects
+ *
+ * Refactor the function setGear inside the object bicycle to use the shorthand syntax described above.
+ */
+const bicycle = {
+    gear: 2,
+    setGear(newGear) {
+        this.gear = newGear;
+    }
+};
+
+bicycle.setGear(3);
+console.log(bicycle.gear);
