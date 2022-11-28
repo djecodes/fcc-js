@@ -287,3 +287,59 @@ class Vegetable {
 
 const carrot = new Vegetable('carrot');
 console.log(carrot.name);
+
+/* You can obtain values from an object and set the value of a property within an object.
+ * These are called getters and setters. 
+ *
+ * Getter functions are to simply return (get) the value of an object's private variable to the user
+ * without the user directly accessing the private variable.
+ * 
+ * Setter functions are meant to modify (set) the value of an object's private variable based on the
+ * value passed into the setter function. This change could involve calculations, or even overwriting
+ * the previous value completely.
+ * 
+ * Note: It is convention to precede the name of a private variable with an underscore. However, 
+ * the practice itself does not make a variable private.
+ * 
+ * 1. Use the class keyword to create a Thermostat class. The constructor accepts a Fahrenheit temperature.
+ * 2. In the class, create a getter to obtain the temperature in Celsius and a setter to set the temperature
+ * in Celsius.
+ * Note: When you implement this, you will track the temperature inside the class in one scale, either
+ * Fahrenheit or Celsius.
+ */
+class Thermostat {
+    constructor(fahrenheit) {
+        this.fahrenheit = fahrenheit;
+    }
+
+    get temperature() {
+        return (5 / 9) * (this.fahrenheit - 32);
+    }
+
+    set temperature(celsius) {
+        this.fahrenheit = (celsius * 9.0) / 5 + 32;
+    }
+}
+
+const thermos = new Thermostat(76); // Setting in Fahernheit scale
+let temp = thermos.temperature; // 24.44 in Celsius
+thermos.temperature = 26;
+temp = thermos.temperature; //26 in Celsius
+
+/* In order to use functions in other files, you need to export it.
+ * When you export a variable or function, you can import it in another file and use it without having to
+ * rewrite the code.
+ * You can export multiple things by repeating the first example for each thing you want to export, or by
+ * placing them all in the export statement.
+ * 
+ * There are two string-related functions, Export them both using the method of your choice.
+ */
+const uppercaseString = (string) => {
+    return string.toUpperCase();
+}
+
+const lowercaseString = (string) => {
+    return string.toLowerCase();
+}
+
+export { uppercaseString, lowercaseString };
