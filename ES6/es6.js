@@ -343,3 +343,23 @@ const lowercaseString = (string) => {
 }
 
 export { uppercaseString, lowercaseString };
+
+/* import allows you to choose which parts of a file or module to load.
+ *
+ * Add the appropriate import statement that will allow the current file to use the uppercaseString and
+ * lowercaseString functions you exported in the previous lesson.
+ */
+import { uppercaseString, lowercaseString } from './string_functions.js';
+
+uppercaseString("hello");
+lowercaseString("WORLD!");
+
+/* Suppose you have a file and you wish to import all of its contents into the current file.
+ * This can be done with the 'import * as' syntax.
+ *
+ * Use the 'import * as' syntax to import everything from the file into an object called stringFunctions
+ */
+import * as stringFunctions from './string_functions.js';
+
+stringFunctions.uppercaseString("hello");
+stringFunctions.lowercaseString("WORLD!"); 
