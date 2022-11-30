@@ -363,3 +363,151 @@ import * as stringFunctions from './string_functions.js';
 
 stringFunctions.uppercaseString("hello");
 stringFunctions.lowercaseString("WORLD!"); 
+
+/* There is another export syntax you need to know, export default. Usually you will use this syntax if
+ * only one value is being exported from a file. It is also used to create a fallback value for a file or
+ * module.
+ * 
+ * Since export default is used to declare a fallback value for a module or file, you can only have one
+ * value be a default export in each module or file. Additionally, you cannot use export default with var,
+ * let, or const
+ * 
+ * The following function should have a fallback value for the module. Add the necessary code to do so.
+ */
+export default function subtract(x, y) {
+    return x - y;
+}
+
+/* To import a default export, you need to use a different import syntax.
+ *
+ * In the following example, 'add' is the default export of the math_function.js file. Here is how to
+ * import it:
+ * 
+ * import add from "./math_functions.js";
+ * 
+ * The syntax differs in one key place. The imported value, add, is not surrounded by curly braces.
+ * add here is simply a variable name for whatever the default export is. You can use any name here when
+ * importing a default.
+ * 
+ * In the following code, import the default export from the math_functions.js, give the import the name
+ * 'subtract'.
+ */
+import subtract from './math_functions.js';
+
+subtract(7,4);
+
+/* A promise in JavaScript is to make a promise to do something, usually asynchronously.
+ * 
+ * When the task completes, you either fulfill your promise or fail to do so.
+ * 
+ * Promise is a constructor function, so you need to use the 'new' keyword to create one.
+ * 
+ * It takes a function, as its argument, with two parameters - resolve and reject. These methods
+ * used to determine the outcome of the promise. 
+ * 
+ * The syntax looks like this:
+ * 
+ * const myPromise = new Promise((resolve, reject) => {
+ * 
+ * });
+ * 
+ * Create a new promise called makeServerRequest. Pass in a function with resolve and reject parameters
+ * to the constructor.
+ */
+const makeServerRequest = new Promise((resolve, reject) => {});
+
+/* A promise has three states: pending, fulfilled, and rejected. The promise you created in the last
+ * challenge is forever stuck in the pending state because you did not add a way to complete the promise.
+ * 
+ * The resolve and reject parameters given to the promise argument are used to do this. resolve is when you
+ * want your promise to succeed, and reject is when you want it to fail. These are methods that take an
+ * argument.
+ * 
+ * Example:
+ * 
+ * const myPromise = new Promise((resolve, reject) => {
+ *  if (//condition here//) {
+ *      resolve("Promise was fulfilled");
+ *  } else {
+ *      reject("Promise was rejected");
+ *  }
+ * });
+ * 
+ * The example uses strings for the argument of these functions, but it could be anything. Often, it might
+ * be an object, that you would use data from, to put on your website or elsewhere.
+ * 
+ * Make the promise handle success and failure. If responseFromServer is true, call the resolve method to
+ * successfully complete the promise. Pass resolve a string with the value 'We got the data'. 
+ * If responseFromServer is false, use the reject method instead and pass it the string: 'Data not received'.
+ */
+const makeServerRequest = new Promise((resolve, reject) => {
+    // responseFromServer represents a response from a server
+    let responseFromServer;
+
+    if(responseFromServer) {
+        resolve("We got the data");
+    } else {
+        reject("Data not received");
+    }
+});
+
+/* Promises are most useful when you have a process that takes an unknown amount of time in your code
+ * (i.e. something asynchronous), often a server request. 
+ *
+ * When you make a server request it takes some amount of time, and after it completes you usually want
+ * to do something with the response from the server. This can be achieved by using the then method.
+ * 
+ * The then method is executed immediately after your promise is fulfilled with resolve. Here's an example:
+ * 
+ * myPromise.then(result => {
+ * 
+ * });
+ * 
+ * Add the then method to your promise. Use result as the parameter of its callback function and log result
+ * to the console.
+ */
+const makeServerRequest = new Promise((resolve, reject) => {
+    // responseFromServer is set to true to represent a successful response from a server
+    let responseFromServer = true;
+
+    if(responseFromServer) {
+        resolve("We got the data");
+    } else {
+        reject("Data not received");
+    }
+
+    makeServerRequest.then(result => {
+        console.log(result);
+    });
+});
+
+/* catch is the method used when your promise has been rejected. It is executed immediately after a
+ * promise's reject method is called. Here's the syntax:
+ *
+ * myPromise.catch(error => {
+ * 
+ * });
+ * 
+ * error is the argument passed in to the reject method.
+ * 
+ * Add the catch method to your promise. Use error as the parameter of its callback function and log error
+ * to the console.
+ */
+const makeServerRequest = new Promise((resolve, reject) => {
+    // responseFromServer is set to true to represent a successful response from a server
+    let responseFromServer = true;
+
+    if(responseFromServer) {
+        resolve("We got the data");
+    } else {
+        reject("Data not received");
+    }
+});
+
+makeServerRequest.then(result => {
+    console.log(result);
+});
+
+makeServerRequest.catch(error => {
+    console.log(error);
+});
