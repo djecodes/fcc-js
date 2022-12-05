@@ -51,3 +51,38 @@ let result = petRegex.test(petString);
 let myString = "freeCodeCamp";
 let fccRegex = /freecodecamp/i;
 let result = fccRegex.test(myString);
+
+/* You can extract the actual matches of patterns existing or not within a string using the .match() method.
+ * To use the .match() method, apply the method on a string and pass in the regex inside the parentheses.
+ *
+ * Example:
+ * let ourStr = "Regular expressions";
+ * let ourRegex = /expressions/;
+ * ourStr.match(ourRegex);
+ * 
+ * Apply the .match() method to extract the string coding.
+ */
+let extractStr = "Extract the word 'coding' from this string.";
+let codingRegex = /coding/;
+let result = extractStr.match(codingRegex);
+
+/* So far, you've only been able to extract or search a pattern once.
+ * 
+ * To search or extract a pattern more than once, you can use the global search flag: g.
+ *
+ * Using the regex starRegex, find and extract both Twinkle words from the string twinkleStar.
+ */
+let twinkleStar = "Twinkle, twinkle, little star";
+let starRegex = /twinkle/gi;
+let result = twinkleStar.match(starRegex);
+
+/* Sometimes you won't know the exact characters in your patterns. Thinking of all words that match would
+ * take a long time. Luckily, you can save time using the wildcard character: .
+ *
+ * The wildcard character will match any one character.
+ * 
+ * Complete the regex unRegex so that it matches the strings run, sun, fun, pun, nun, and bun.
+ */
+let exampleStr = "Let's have fun with regular expressions!";
+let unRegex = /.un/;
+let result = unRegex.test(exampleStr);
