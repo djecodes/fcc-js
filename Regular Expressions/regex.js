@@ -86,3 +86,16 @@ let result = twinkleStar.match(starRegex);
 let exampleStr = "Let's have fun with regular expressions!";
 let unRegex = /.un/;
 let result = unRegex.test(exampleStr);
+
+/* You can search for literal pattern with some flexibility with character classes. Character classes allow
+ * you to define a group of character you wish to match by placing them inside square brackets.
+ *
+ * For example, you want to match bag, big, and bug but not bog. You can create the regex /b[aiu]g/ to do
+ * this. The [aiu] is the character class that will only match characters a, i, or u.
+ * 
+ * Use a character class with vowels (a,e,i,o,u) in your regex vowelRegex to find all the vowels in the
+ * string quoteSample.
+ */
+let quoteSample = "Beware of bugs in above the code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aeiou]/gi;
+let result = quoteSample.match(vowelRegex);
