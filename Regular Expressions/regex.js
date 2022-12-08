@@ -139,3 +139,76 @@ let result = quoteSample.match(myRegex);
 let quoteSample = "3 blind mice.";
 let myRegex = /[^aeiou^0-9]/gi;
 let result = quoteSample.match(myRegex);
+
+/* If you need to match a character (or group of them) that appears one or more times in a row. You can use
+ * the + character to check if it may be repeated. Remember, the character or pattern has to be present
+ * consecutively. That is, the character has to repeat one after the other.
+ * 
+ * For example, /a+/g would find one match in abc and return ["a"]. Because of the +, it would also find a
+ * single match in aabc and return ["aa"].
+ * 
+ * You want to find matches when the letter s occurs one or more times in Mississippi. Write a regex that
+ * uses the + sign.
+ */
+let difficultSpelling = "Mississippi";
+let myRegex = /s+/g;
+let result = difficultSpelling.match(myRegex);
+
+/* The last challenge used + to look for characters that occur one or more times. There's also an option
+ * that matches characters that occur zero or more times.
+ *
+ * The character to do this is the asterisk
+ * 
+ * For this challenge, create a regex chewieRegex that uses the * character to match an uppercase A
+ * character immediately followed by zero or more lowercase a characters in chewieQuote. Your regex does
+ * not need flags or character classes, and it should not match any of the other quotes.
+ */
+let chewieRegex = /Aa*/g;
+let result = chewieQuote.match(chewieRegex);
+
+/* In regular expressions, a greedy match finds the longest possible part of a string that fits the regex
+ * pattern and returns it as a match. The alternative is called a lazy match, which finds the smallest 
+ * possible part of the string that satisfies the regex pattern.
+ * 
+ * You can apply the regex /t[a-z]*i/ to the string "titanic". This regex is basically a pattern that starts
+ * with t, ends with i, and has some letters in between.
+ * 
+ * Regular expressions are by default greedy, so the match would return ["titani"]. It finds the largest
+ * sub-string possible to fit the pattern.
+ * 
+ * However, you can use the ? character to change it to lazy matching. "titanic" matched against the
+ * adjusted regex of /t[a-z]*?i/ returns ["ti"].
+ * 
+ * Find the regex /<.*>/ to return the HTML tag <h1> and not the text "<h1>Winter is coming</h1>".
+ */
+let text = "<h1>Winter is coming</h1>";
+let myRegex = /<.*?>/;
+let result = text.match(myRegex);
+
+/* Find One or More Criminals in a Hunt:
+ * 
+ * A group of criminals escaped from jail and ran away, but you don't know how many. However you do know
+ * that they stay close together when they are around other people. You are responsible for finding all of
+ * the criminals at once.
+ * 
+ * Write a greedy regex that finds one or more criminals within a group of other people. A criminal is
+ * represented by the capital letter C.
+ */
+let reCriminals = /C+/;
+
+/* Outside of character set, the caret is used to search for patterns at the beginning of strings.
+ * 
+ * Use the caret character in a regex to find Cal only in the beginning of the string rickyAndCal.
+ */
+let rickyAndCal = "Cal and Ricky both like racing";
+let calRegex = /^Cal/;
+let result = calRegex.test(rickyAndCal);
+
+/* There is also a way to search for patterns at the end of strings. You can search the end of strings
+ * using the dollar sign character $ at the end of the regex.
+ *
+ * Use the anchor character ($) to match the string caboose at the end of the string caboose.
+ */
+let caboose = "The last car on a train is the caboose";
+let lastRegex = /caboose$/;
+let result = lastRegex.test(caboose);
