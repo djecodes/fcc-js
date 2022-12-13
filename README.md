@@ -1,4 +1,4 @@
-# freeCodeCamp's JavaScript Algortihms and Data Structures
+# freeCodeCamp's JavaScript Algorithms and Data Structures
 
 This repository contains all my code solutions to the challenges within the ten sections:
 - Basic JavaScript
