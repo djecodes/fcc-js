@@ -227,3 +227,65 @@ let result = lastRegex.test(caboose);
 let quoteSample = "The five boxing wizards jump quickly.";
 let alphabetRegexV2 = /\w/g;
 let result = quoteSample.match(alphabetRegexV2).length;
+
+/* You can search for the opposite of alphanumerics (\w) with \W.
+ * 
+ * Use the shorthand character \W to count the number of non-alphanumeric characters in
+ * various quotes and strings.
+ */
+let quoteSample = "The five boxing wizards jump quickly.";
+let nonAlphabetRegex = /\W/g;
+let result = quoteSample.match(nonAlphabetRegex).length;
+
+/* The shortcut to look for digit characters is \d, with a lowercase d. This is equal to
+ * the character class [0-9]. which looks for a single character of any number between zero
+ * and nine.
+ * 
+ * Use the shorthand character class \d to count how many digits are in movie titles.
+ * Written out numbers ("six" instead of 6) do not count.
+ */
+let movieName = "2001: A Space Odyssey";
+let numRegex = /\d/g;
+let result = movieName.match(numRegex).length;
+
+/* The shortcut to look for non-digital characters is \D. This is equal to the character
+ * class [^0-9], which looks for a single character that is not a number between zero and nine
+ * 
+ * Use the shorthand character class for non-digits \D to count how many non-digits are in
+ * movie titles.
+ */
+
+let movieName = "2001: A Space Odyssey";
+let noNumRegex = /\D/g;
+let result = movieName.match(numRegex).length;
+
+/* Restrict Possible Usernames Challenge:
+ *
+ * Usernames are used everywhere on the internet. They are what give users a unique identity
+ * on their favorite sites.
+ * 
+ * You need to check all the usernames in a database. Here are some simple rules that users
+ * have to follow when creating their username.
+ * 
+ * 1. Usernames can only use alpha-numeric characters.
+ * 2. The only numbers in the username have to be at the end. There can be zero or more of
+ * them at the end. Username cannot start with the number.
+ * 3. Username letters can be lowercase and uppercase.
+ * 4. Usernames have to be at least two characters long. A two-character username can only
+ * use alphabet letters as characters.
+ * 
+ * Change the regex userCheck to fit the constraints listed above.
+ */
+let username = "JackOfAllTrades";
+let userCheck = /^[a-z][a-z]+\d*$|^[a-z]\d\d+$/i;
+let result = userCheck.test(username);
+
+/* You can search for whitespace using \s, which is a lowercase s. This pattern not only
+ * matches whitespace, but also carriage return, tab, form feed, and new line characters.
+ * You can think of it as similar to the character class [ \r\t\f\n\v]
+ * 
+ * Change the regex countWhiteSpace to look for multiple whitespace characters in a string.
+ */
+let sample = "Whitespace is important in separating words.";
+let countWhiteSpace = /\s/g;
+let result = sample.match(countWhiteSpace);
