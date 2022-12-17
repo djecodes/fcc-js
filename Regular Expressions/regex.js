@@ -300,3 +300,56 @@ let result = sample.match(countWhiteSpace);
 let sample = "Whitespace is important in separating words";
 let countNonWhiteSpace = /\S/g; // Change this line
 let result = sample.match(countNonWhiteSpace);
+
+/* You can specify the lower and upper number of patterns with quantity specifiers. Quantity specifiers 
+ * are used with curly brackets. You put two numbers between the curly brackets - for the lower and upper 
+ * number of patterns.
+ * 
+ * For example, to match only the letter a appearing between 3 and 5 times in the string ah, your regex would be /a{3,5}/
+ * 
+ * Change the regex ohRegex to match the entire phrase Oh no only when it has 3 to 6 letter h's
+ */
+let ohStr = "Ohhh no";
+let ohRegex = /Oh{3,6} no/;
+let result = ohRegex.test(ohStr);
+
+/* To only specify the lower number of patterns, keep the first number followed by a comma.
+ * 
+ * For example, to match only the string hah with the letter a appearing at least 3 times, the regex would be
+ * /ha{3,}h/
+ * 
+ * Change the regex haRegex to match the word Hazzah only when it has four or more letter z's
+ */
+let haStr = "Hazzzzah";
+let haRegex = /Haz{4,}ah/;
+let result = haRegex.test(haStr);
+
+/* To specify a certain number of patterns, just have that one number between the curly brackets.
+ * 
+ * For example, to match only the word hah with the letter 'a' 3 times, your regex would be /ha{3}h/
+ * 
+ * let multipleHA = /ha{3}h/;
+ * 
+ * Change the regex timRegex to match the word Timber only when it has four letter m's
+ */
+let timStr = "Timmmmber";
+let timRegex = /Tim{4}ber/;
+let result = timRegex.test(timStr);
+
+/* You can specify the possible existence of an element with a question mark, ?. This checks for zero
+ * or one of the preceding element. You can think of this symbol as saying the previous element is 
+ * optional.
+ * 
+ * For example, there are slight differences in American and British English and you can use the question 
+ * mark to match both spellings.
+ * 
+ * let american = "color";
+ * let british = "colour";
+ * let rainbowRegex = /colou?r/;
+ * 
+ * Change the regex favRegex to match both the American English (favorite) and the British English (favourite)
+ * version of the world.
+ */
+let favWord = "favorite";
+let favRegex = /favou?rite/;
+let result = favRegex.test(favWord);
